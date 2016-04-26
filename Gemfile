@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '~> 3.4.1'
 gem 'bower-rails', '~> 0.10.0'
 gem 'jquery-rails', '~> 4.0.3'
-gem 'angular-rails-templates', '~> 0.2.0'
+gem 'angular-rails-templates', '~> 1.0'
  
  
 group :development, :test do
