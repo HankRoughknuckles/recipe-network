@@ -3,7 +3,7 @@ angular.module('app')
     ($routeProvider) ->
       $routeProvider
         .when('/',
-          templateUrl: "index.html"
+          templateUrl: "recipes/index.html"
           controller: "RecipesController"
         )
   ])
