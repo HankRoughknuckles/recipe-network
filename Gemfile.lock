@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 2b4989935130732d59d7cc1b6228d4a447dd5071
+  specs:
+    active_model_serializers (0.10.0.rc5)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,6 +63,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cliver (0.3.2)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -98,10 +108,16 @@ GEM
     mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    multi_json (1.12.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    poltergeist (1.9.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -178,6 +194,9 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    websocket-driver (0.6.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -185,6 +204,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   angular-rails-templates (~> 1.0)
   bower-rails (~> 0.10.0)
   byebug
@@ -196,6 +216,7 @@ DEPENDENCIES
   jquery-rails (~> 4.0.3)
   launchy (~> 2.4.3)
   pg (~> 0.18.1)
+  poltergeist
   rails (= 4.2.0)
   rails_12factor (~> 0.0.3)
   rails_serve_static_assets (~> 0.0.4)
