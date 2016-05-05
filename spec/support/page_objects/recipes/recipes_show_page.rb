@@ -10,6 +10,7 @@ class RecipesShowPage
     @title = "Recipe details"
   end
 
+  # for getting to the page
   def visit_page
     visit @page_url
   end
@@ -17,5 +18,20 @@ class RecipesShowPage
   def visit_page_as(user)
     user.present? ? login_as(user) : logout
     visit @page_url
+  end
+
+
+  def has_recipe_name? 
+    has_content? @recipe.name
+  end
+
+
+  def has_recipe_description? 
+    has_content? @recipe.description
+  end
+
+
+  def has_recipe_instructions?
+    has_content? @recipe.instructions
   end
 end
