@@ -1,7 +1,11 @@
 angular.module('app.controllers')
   .controller 'MainController', [
     '$scope'
+    '$location'
     'Page' # used for setting the title of the page
-    ($scope, Page) ->
+    ($scope, $location, Page) ->
       $scope.Page = Page
+
+      $scope.showRecipes = ->
+        $location.path "/"
   ]
