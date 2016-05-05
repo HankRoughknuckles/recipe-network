@@ -4,6 +4,6 @@ angular.module('app')
       $routeProvider
         .when('/',
           templateUrl: "recipes/index.html"
-          controller: "RecipesController"
+          controller: "RecipesIndexController"
         )
   ])

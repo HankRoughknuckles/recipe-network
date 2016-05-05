@@ -1,5 +1,7 @@
 <h1 class="text-center">Recipes</h1>
 
 <section class="row" ng-repeat="recipe in recipes">
-  <section class="well">{{recipe.name}}</section>
+  <section class="well">
+    <a href ng-click="showRecipe(recipe)" class="recipe">{{recipe.name}}</a>
+  </section>
 </section>

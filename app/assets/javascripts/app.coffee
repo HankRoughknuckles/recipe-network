@@ -1,7 +1,8 @@
 angular.module('app', [
   'templates'
   'ngRoute'
-  'controllers'
+  'ngResource'
+  'app.controllers'
 ])
 
-angular.module('controllers', [])
+angular.module('app.controllers', []) # contains controllers
