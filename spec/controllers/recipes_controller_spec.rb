@@ -14,9 +14,12 @@ RSpec.describe RecipesController, :type => :controller do
     it "should display all recipes when no search term present" do
       get :index, format: :json
       expect(json_output).to eq [
-        { "name" => cheese_spread.name },
-        { "name" => cheese_pasta.name },
-        { "name" => baked_potatoes.name }
+        { "id" => cheese_spread.id, 
+          "name" => cheese_spread.name },
+        { "id" => cheese_pasta.id, 
+          "name" => cheese_pasta.name },
+        { "id" => baked_potatoes.id, 
+          "name" => baked_potatoes.name },
       ]
     end
 
@@ -24,8 +27,10 @@ RSpec.describe RecipesController, :type => :controller do
     it "should display results similar to search term" do
       get :index, format: :json, search: "cheese"
       expect(json_output).to eq [
-        { "name" => cheese_spread.name },
-        { "name" => cheese_pasta.name }
+        { "id" => cheese_spread.id, 
+          "name" => cheese_spread.name },
+        { "id" => cheese_pasta.id, 
+          "name" => cheese_pasta.name },
       ]
     end
   end
