@@ -1,0 +1,8 @@
+/*
+  Stylesheet for styles that should be applied no matter what page is
+  loaded
+*/
+
+body {
+  padding-top: 65px;
+}
