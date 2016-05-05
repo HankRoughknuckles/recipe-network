@@ -27,6 +27,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_cleaner', '~> 1.4.0'
   gem 'launchy', '~> 2.4.3'
+  gem 'json-schema', '~> 2.6.1'
 end
 
 
