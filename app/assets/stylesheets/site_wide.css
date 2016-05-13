@@ -6,3 +6,7 @@
 body {
   padding-top: 65px;
 }
+
+.preserve-newlines {
+  white-space: pre-wrap;
+}
