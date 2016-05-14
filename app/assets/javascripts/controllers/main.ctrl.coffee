@@ -6,6 +6,6 @@ angular.module('app.controllers')
     ($scope, $location, Page) ->
       $scope.Page = Page
 
-      $scope.showRecipes = ->
-        $location.path "/"
+      $scope.showRecipes = -> $location.path "/"
+      $scope.showSignIn = -> $location.path "/sign-in"
   ]

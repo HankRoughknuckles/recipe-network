@@ -12,6 +12,8 @@
   <div class="container">
     <div class="navbar-header">
       <a href ng-click="showRecipes()" class="navbar-brand">Recipe Network</a>
+      <a ng-click="showSignIn()" ng-show="!user.id">Sign in</a> 
+      <a ng-click='signOut()' ng-show="user.id">Sign out</a>
     </div>
   </div>
 </div>

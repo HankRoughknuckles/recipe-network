@@ -6,6 +6,10 @@ angular.module('app')
           templateUrl: "recipes/show.html"
           controller: "RecipesShowController"
         )
+        .when('/sign-in', 
+          templateUrl: 'user_sessions/new.html'
+          controller: 'UserSessionsController'
+        )
         .otherwise(
           templateUrl: "recipes/index.html"
           controller: "RecipesIndexController"
