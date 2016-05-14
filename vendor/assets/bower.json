@@ -4,6 +4,8 @@
     "angular": "latest",
     "bootstrap-sass-official": "latest",
     "angular-route": "latest",
-    "angular-resource": "latest"
+    "angular-resource": "latest",
+    "ng-token-auth": "latest",
+    "angular-cookie": "latest"
   }
 }

@@ -2,6 +2,7 @@ angular.module('app', [
   'templates'
   'ngRoute'
   'ngResource'
+  'ng-token-auth'
   'app.controllers'
   'app.services'
 ])
