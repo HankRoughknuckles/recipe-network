@@ -7,6 +7,9 @@ class RecipesIndexPage
   def initialize
     @page_url = "/"
     @title = "Recipes"
+
+    @header_css = "h1"
+    @header_text = "Recipes"
   end
 
 
@@ -28,5 +31,9 @@ class RecipesIndexPage
 
   def click_recipe(recipe)
     find(".recipe", text: recipe.name).click
+  end
+
+  def has_proper_header?
+    has_content? @header_css, text: @header_text
   end
 end

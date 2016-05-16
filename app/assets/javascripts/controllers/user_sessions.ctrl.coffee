@@ -2,5 +2,7 @@ angular.module('app.controllers')
   .controller('UserSessionsController', [
     '$scope'
     ($scope) ->
-      console.log "UserSessionsController loaded"
+      $scope.$on('auth:login-error', (event, reason) ->
+        $scope.error = reason.errors[0]
+      )
   ])
