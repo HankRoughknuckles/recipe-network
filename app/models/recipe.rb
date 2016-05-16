@@ -1,4 +1,7 @@
 class Recipe < ActiveRecord::Base
+  has_many :recipe_users
+  has_many :fans, through: :recipe_users, source: :user
+
   ##################################################################
   # Class methods
   ##################################################################
