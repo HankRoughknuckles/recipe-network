@@ -33,7 +33,7 @@ class RecipesIndexPage
     find(".recipe", text: recipe.name).click
   end
 
-  def has_proper_header?
-    has_content? @header_css, text: @header_text
+  def displayed?
+    has_css? @header_css, text: @header_text
   end
 end

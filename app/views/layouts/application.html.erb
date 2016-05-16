@@ -12,7 +12,10 @@
   <div class="container">
     <div class="navbar-header">
       <a href ng-click="showRecipes()" class="navbar-brand">Recipe Network</a>
-      <a ng-click="showSignIn()" ng-show="!user.id">Sign in</a> 
+      <div ng-show="!user.id">
+        <a ng-click="showSignIn()" class="sign-in">Sign in</a>
+        <a ng-click="showSignUp()" class="sign-up">Sign up</a>
+      </div>
       <a ng-click='signOut()' ng-show="user.id">Sign out</a>
     </div>
   </div>

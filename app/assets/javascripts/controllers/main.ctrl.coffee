@@ -10,6 +10,7 @@ angular.module('app.controllers')
       # paths and actions for links
       $scope.showRecipes = -> $location.path "/"
       $scope.showSignIn = -> $location.path "/sign-in"
+      $scope.showSignUp = -> $location.path "/sign-up"
 
       # redirect to index on login
       $rootScope.$on('auth:login-success', -> $location.path('/') )
