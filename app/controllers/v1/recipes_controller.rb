@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class V1::RecipesController < ApplicationController
   before_action :set_recipe, except: [:new, :index]
 
   ##################################################################
@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   ##################################################################
   def index
     @recipes = Recipe.search_or_all(params[:search])
-    render json: @recipes
+    # render json: @recipes
   end
 
 
@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
   # GET #show
   ##################################################################
   def show
-    render json: @recipe
+    render json: @recipe, methods: :favorited_by?
   end
 
 
