@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/rails-api/active_model_serializers.git
-  revision: 2b4989935130732d59d7cc1b6228d4a447dd5071
-  specs:
-    active_model_serializers (0.10.0.rc5)
-      actionpack (>= 4.0)
-      activemodel (>= 4.0)
-      railties (>= 4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -95,6 +86,9 @@ GEM
       activesupport (>= 4.1.0)
     hashie (3.4.4)
     i18n (0.7.0)
+    jbuilder (2.4.1)
+      activesupport (>= 3.0.0, < 5.1)
+      multi_json (~> 1.2)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -212,7 +206,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers!
   angular-rails-templates (~> 1.0)
   bower-rails (~> 0.10.0)
   byebug
@@ -221,6 +214,7 @@ DEPENDENCIES
   database_cleaner (~> 1.4.0)
   devise_token_auth (~> 0.1.37)
   factory_girl_rails (~> 4.5.0)
+  jbuilder (~> 2.4.1)
   jquery-rails (~> 4.0.3)
   json-schema (~> 2.6.1)
   launchy (~> 2.4.3)
