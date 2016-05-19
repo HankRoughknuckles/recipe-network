@@ -2,7 +2,7 @@ angular.module('app.services')
   .factory('RecipesApi', [
     '$resource'
     ($resource) ->
-      $resource('/recipes/:recipeId',
+      $resource('/api/v1/recipes/:recipeId',
                 { recipeId: '@id', format: 'json' },
                 { update: { method: 'PUT' } })
   ])

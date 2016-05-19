@@ -6,7 +6,6 @@ class V1::RecipesController < ApplicationController
   ##################################################################
   def index
     @recipes = Recipe.search_or_all(params[:search])
-    # render json: @recipes
   end
 
 
@@ -14,7 +13,6 @@ class V1::RecipesController < ApplicationController
   # GET #show
   ##################################################################
   def show
-    render json: @recipe, methods: :favorited_by?
   end
 
 

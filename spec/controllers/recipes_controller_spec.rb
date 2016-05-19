@@ -15,7 +15,7 @@ RSpec.describe RecipesController, :type => :controller do
       get :index, format: :json
 
       expect(json_output.count).to eq 3
-      expect(json_output[0]).to match_response_schema("recipe")
+      expect(json_output.first).to match_response_schema("recipe")
     end
 
 

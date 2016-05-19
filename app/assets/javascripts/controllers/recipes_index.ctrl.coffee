@@ -10,7 +10,7 @@ angular.module('app.controllers')
 
 
       # load the recipes from the API
-      RecipesApi.query(search: "", 
+      RecipesApi.query(search: "",
         (results) -> $scope.recipes = results
       )
 
