@@ -3,6 +3,6 @@ angular.module('app.controllers')
     '$scope'
     ($scope) ->
       $scope.$on('auth:login-error', (event, reason) ->
-        $scope.error = reason.errors[0]
+        $scope.error = reason.errors[0] if reason
       )
   ])
