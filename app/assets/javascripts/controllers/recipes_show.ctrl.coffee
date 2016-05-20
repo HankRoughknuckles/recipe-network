@@ -10,6 +10,6 @@ angular.module('app.controllers')
       Page.setTitle "Recipe details"
 
       RecipesApi.get { recipeId: $routeParams.recipeId },
-        ( (recipe) -> $scope.recipe = recipe ),
+        ( (receivedRecipe) -> $scope.recipe = receivedRecipe ),
         ( (httpResponse) -> $scope.recipe = {} )
   ]
