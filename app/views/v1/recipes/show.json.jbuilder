@@ -1,1 +1,2 @@
-json.partial! @recipe, partial: 'v1/recipes/recipe', as: :recipe
+json.partial! 'v1/recipes/recipe', locals: { recipe: @recipe,
+                                             user: current_user }

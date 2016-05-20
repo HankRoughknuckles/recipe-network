@@ -4,6 +4,7 @@
     "id": { "type": "integer" },
     "name": { "type": "string" },
     "description": { "type": "string" },
-    "instructions": { "type": "string" }
+    "instructions": { "type": "string" },
+    "favorited": { "type": "boolean" }
   }
 }

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RecipesController, :type => :controller do
+RSpec.describe V1::RecipesController, :type => :controller do
   render_views
 
   let!(:cheese_spread) { FactoryGirl.create(:recipe, name: "Cheese spread") }
@@ -32,7 +32,7 @@ RSpec.describe RecipesController, :type => :controller do
   # GET #show
   ##################################################################
   describe 'GET #show' do
-    before { get :show, id: cheese_spread.id, format: :json}
+    before { get :show, id: cheese_spread.id, format: :json }
 
     it { expect(response).to be_success }
     it { expect(response.body).to match_response_schema("recipe") }

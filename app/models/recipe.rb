@@ -10,4 +10,13 @@ class Recipe < ActiveRecord::Base
   def self.search_or_all(name = "")
     name.present? ? Recipe.where('name ILIKE ?', "%#{name}%") : Recipe.all
   end
+
+
+  ##################################################################
+  # Instance methods
+  ##################################################################
+  def favorited_by?(user)
+    return false if user.nil?
+    fans.where(id: user.id).any?
+  end
 end
