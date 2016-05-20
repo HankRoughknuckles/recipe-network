@@ -1,7 +1,22 @@
 <h1 class="text-center">{{recipe.name}}</h1>
 
 <div class="well">
-  <h4>Description</h4>
+  <div class="row">
+    <h4>
+      <div class="col-sm-10">Description</div>
+      <div class="col-sm-2 text-right">
+        <span 
+        ng-if="recipe.favorited" 
+        class="favorited favorite-star glyphicon glyphicon-star"
+        title="Remove from favorites"></span>
+        <span 
+        ng-if="!recipe.favorited" 
+        class="unfavorited favorite-star glyphicon glyphicon-star-empty"
+        title="Add to favorites"></span>
+      </div>
+    </h4>
+  </div>
+
   {{recipe.description}}
 </div>
 

@@ -3,3 +3,5 @@ json.(recipe,
       :name, 
       :description,
       :instructions)
+
+json.favorited(recipe.favorited_by?(user))

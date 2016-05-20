@@ -8,6 +8,9 @@ class RecipesShowPage
     @recipe = recipe
     @page_url = "/#/recipes/#{@recipe.id}"
     @title = "Recipe details"
+
+    @favorited_mark = ".favorited"
+    @unfavorited_mark = ".unfavorited"
   end
 
   # for getting to the page
@@ -33,5 +36,17 @@ class RecipesShowPage
 
   def has_recipe_instructions?
     has_content? @recipe.instructions
+  end
+
+
+  ##################################################################
+  # favorited
+  ##################################################################
+  def has_favorited_mark?
+    has_css? @favorited_mark
+  end
+
+  def has_unfavorited_mark?
+    has_css? @unfavorited_mark
   end
 end

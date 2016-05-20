@@ -10,3 +10,13 @@ body {
 .preserve-newlines {
   white-space: pre-wrap;
 }
+
+.favorited {
+  color: orange;
+}
+
+.favorite-star {
+  font-size: 1.5em;
+  cursor: pointer;
+  cursor: hand;
+}
