@@ -8,6 +8,8 @@ class SignInPage
     @page_url =	'/#/sign-in'
     @title = "Sign in"
 
+    @email_input = "input[name=email]"
+    @password_input = "input[name=password]"
     @submit_button = '.submit'
     @invalid_credentials_error = 'Invalid login credentials. Please try again.'
   end
@@ -23,8 +25,8 @@ class SignInPage
 
 
   def fill_sign_in_form(email, password)
-    fill_in "Email", with: email
-    fill_in "Password", with: password
+    find(@email_input).set email
+    find(@password_input).set password
     find(@submit_button).click
   end
 
