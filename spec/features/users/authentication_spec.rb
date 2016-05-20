@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Authentication', js: true do
   let(:index_page) { RecipesIndexPage.new }
   let(:sign_in_page) { SignInPage.new }
+  let(:navbar) { NavbarPage.new }
   let!(:user) { FactoryGirl.create(:user) }
 
 
@@ -11,7 +12,9 @@ describe 'Authentication', js: true do
 
     it 'should work with valid inputs' do
       sign_in_page.fill_sign_in_form(user.email, user.password)
+
       expect(index_page).to be_displayed
+      expect(navbar).to have_sign_out_link
     end
 
 
