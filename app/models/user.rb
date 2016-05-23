@@ -16,7 +16,19 @@ class User < ActiveRecord::Base
     unless has_favorited?(recipe)
       favorite_recipes << recipe
       save
+      return true
     end
+    return false
+  end
+
+
+  def remove_recipe_from_favorites(recipe)
+    if has_favorited?(recipe)
+      favorite_recipes.delete(recipe.id)
+      save
+      return true
+    end
+    return false
   end
 
 
