@@ -46,7 +46,13 @@ class RecipesShowPage
     has_css? @favorited_mark
   end
 
+
   def has_unfavorited_mark?
     has_css? @unfavorited_mark
+  end
+
+
+  def click_unfavorite_button
+    find(@favorited_mark).click # click the favorite button to toggle
   end
 end

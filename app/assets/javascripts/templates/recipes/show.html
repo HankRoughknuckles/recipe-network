@@ -8,11 +8,12 @@
         <span 
         ng-if="recipe.favorited" 
         class="favorited favorite-star glyphicon glyphicon-star"
-        title="Remove from favorites"></span>
+        ng-click="unfavoriteRecipe()"
+        title="Click to remove from favorites"></span>
         <span 
         ng-if="!recipe.favorited" 
         class="unfavorited favorite-star glyphicon glyphicon-star-empty"
-        title="Add to favorites"></span>
+        title="Click to add to favorites"></span>
       </div>
     </h4>
   </div>
