@@ -33,18 +33,29 @@ describe 'Recipe show page', js: true do
 
       it { expect(show_page).to have_favorited_mark }
 
+
       it "should unfavorite when clicked" do
         show_page.click_unfavorite_button 
+
         expect(show_page).to have_unfavorited_mark
       end
     end
 
 
-    it "should not show favorited if not favorited by user" do
-      sign_in_page.sign_in_as user
-      index_page.click_recipe(recipe)
+    context "when not favorited by logged in user" do
+      before do
+        sign_in_page.sign_in_as user
+        index_page.click_recipe(recipe)
+      end
 
-      expect(show_page).to have_unfavorited_mark
+      it { expect(show_page).to have_unfavorited_mark }
+
+
+      it "should favorite when clicked" do
+        show_page.click_favorite_button
+
+        expect(show_page).to have_favorited_mark
+      end
     end
   end
 end

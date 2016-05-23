@@ -17,6 +17,26 @@ angular.module('app.controllers')
 
       $scope.unfavoriteRecipe = ->
         FavoriteRecipesApi.delete { recipeId: $routeParams.recipeId },
-          ( (removedRecipe) -> $scope.recipe = removedRecipe ),
-          ( (httpResponse) -> console.log(httpResponse) )
+          ( favoritesSuccess ), ( favoritesFailure )
+
+
+      $scope.favoriteRecipe = ->
+        FavoriteRecipesApi.save { recipeId: $routeParams.recipeId },
+          ( favoritesSuccess ), ( favoritesFailure )
+
+
+
+      # Handler for what happens when server response is a success when
+      # dealing with add/removing recipe to/from favorites. Whether adding
+      # or removing from favorites, the server will return the recipe
+      favoritesSuccess = (affectedResource) ->
+        $scope.recipe = affectedResource
+
+
+      # Handler for what happens when server response is a failure when
+      # dealing with add/removing recipe to/from favorites. Whether adding
+      # or removing from favorites, the server will return some response
+      # object
+      favoritesFailure = (httpResponse) ->
+        (httpResponse) -> console.log(httpResponse) 
   ]

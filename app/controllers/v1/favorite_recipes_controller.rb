@@ -2,8 +2,8 @@ class V1::FavoriteRecipesController < ApplicationController
   before_action :set_recipe, except: [:new, :index]
 
   def create
-    # current_user.add_recipe_to_favorites(@recipe)
-    # render 'recipes/show'
+    current_user.add_recipe_to_favorites(@recipe)
+    render 'v1/recipes/show'
   end
 
   def destroy

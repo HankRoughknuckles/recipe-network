@@ -52,7 +52,12 @@ class RecipesShowPage
   end
 
 
+  def click_favorite_button
+    find(@unfavorited_mark).click # click the unfavorite mark to toggle
+  end
+
+
   def click_unfavorite_button
-    find(@favorited_mark).click # click the favorite button to toggle
+    find(@favorited_mark).click # click the favorite mark to toggle
   end
 end
