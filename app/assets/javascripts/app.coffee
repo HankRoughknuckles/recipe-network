@@ -3,6 +3,7 @@ angular.module('app', [
   'ngRoute'
   'ngResource'
   'ng-token-auth'
+  'LocalStorageModule'
   'app.controllers'
   'app.services'
 ])

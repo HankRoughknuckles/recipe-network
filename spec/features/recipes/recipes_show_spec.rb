@@ -44,7 +44,7 @@ describe 'Recipe show page', js: true do
 
     context "when not favorited by logged in user" do
       before do
-        sign_in_page.sign_in_as user
+        sign_in_page.sign_in_as(user)
         index_page.click_recipe(recipe)
       end
 

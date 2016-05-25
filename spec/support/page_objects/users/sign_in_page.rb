@@ -8,6 +8,7 @@ class SignInPage
     @page_url =	'/#/sign-in'
     @title = "Sign in"
 
+    @header_content = "Sign in"
     @email_input = "input[name=email]"
     @password_input = "input[name=password]"
     @submit_button = '.submit'
@@ -21,6 +22,11 @@ class SignInPage
   def visit_page_as(user)
     user.present? ? login_as(user) : logout
     visit @page_url
+  end
+
+
+  def displayed?
+    has_css? "h1", text: @header_content
   end
 
 
