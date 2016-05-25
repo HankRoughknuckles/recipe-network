@@ -14,6 +14,6 @@ class V1::FavoriteRecipesController < ApplicationController
 
   private
     def set_recipe
-      @recipe = Recipe.find(params[:recipe_id])
+      @recipe = Recipe.find(params[:id])
     end
 end
