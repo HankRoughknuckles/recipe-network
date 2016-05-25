@@ -15,4 +15,17 @@ angular.module('app.controllers')
 
       # redirect to index on login
       $rootScope.$on('auth:login-success', -> $location.path('/') )
+
+
+      $scope.$on('auth:login-success', (event, user) ->
+        $scope.setCurrentUser(user)
+        $location.path('/')
+      )
+
+
+      $scope.setCurrentUser = (user) ->
+        localStorageService.set("user", user)
+
+      $scope.currentUser = ->
+        return localStorageService.get("user")
   ]
