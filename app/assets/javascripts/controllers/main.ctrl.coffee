@@ -9,28 +9,32 @@ angular.module('app.controllers')
     ($scope, $rootScope, $location, $auth, localStorageService, Page) ->
       $scope.Page = Page
 
+      # paths
+      $scope.ROOT_PATH = "/"
+      $scope.SIGN_IN_PATH = "sign-in"
+      $scope.SIGN_UP_PATH = "sign-up"
+      $scope.FAVORITE_RECIPES_PATH = "recipes/favorites"
 
-      # paths and actions for links
-      $scope.showRecipes = -> $location.path ROOT_PATH
-      $scope.showSignIn = -> $location.path SIGN_IN_PATH
-      $scope.showSignUp = -> $location.path SIGN_UP_PATH
+
+      # for opening the favorites page 
+      # TODO: take care of this in the angular router
       $scope.favoritesPage = ->
         if $scope.currentUser()
-          $location.path FAVORITE_RECIPES_PATH 
+          $location.path $scope.FAVORITE_RECIPES_PATH
         else
-          $location.path SIGN_IN_PATH
+          $location.path $scope.SIGN_IN_PATH
 
 
       # redirect to index on login
-      $rootScope.$on('auth:login-success', -> $location.path('/') )
-
-
       $scope.$on('auth:login-success', (event, user) ->
         $scope.setCurrentUser(user)
         $location.path('/')
       )
 
-
+      
+      ############################################################
+      # Current user getter/setter
+      ############################################################
       $scope.setCurrentUser = (user) ->
         localStorageService.set("user", user)
 
