@@ -25,9 +25,17 @@ angular.module('app.controllers')
           $location.path $scope.SIGN_IN_PATH
 
 
+      ############################################################
+      # Login / logout handlers
+      ############################################################
       # redirect to index on login
       $scope.$on('auth:login-success', (event, user) ->
         $scope.setCurrentUser(user)
+        $location.path('/')
+      )
+
+      $scope.$on('auth:logout-success', (event, user) ->
+        $scope.setCurrentUser(null)
         $location.path('/')
       )
 
@@ -38,15 +46,6 @@ angular.module('app.controllers')
       $scope.setCurrentUser = (user) ->
         localStorageService.set("user", user)
 
-      $scope.currentUser = ->
-        return localStorageService.get("user")
-
-
-      # signs out the logged in user and sets $scope.currentUser() to null
-      $scope.signOut = -> 
-        $auth.signOut()
-          .then (response) ->
-            $scope.setCurrentUser(null)
-          .catch (response) ->
-            console.log "There was an error logging out"
+      $scope.currentUser = -> 
+        localStorageService.get("user")
   ]
