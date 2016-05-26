@@ -3,15 +3,10 @@ angular.module('app.controllers')
     '$scope'
     '$rootScope'
     '$location'
+    '$auth'
     'localStorageService'
     'Page' # used for setting the title of the page
-    ($scope, $rootScope, $location, localStorageService, Page) ->
-      ROOT_PATH = "/"
-      SIGN_IN_PATH = "/sign-in"
-      SIGN_UP_PATH = "/sign-up"
-      FAVORITE_RECIPES_PATH = "/recipes/favorites"
-
-
+    ($scope, $rootScope, $location, $auth, localStorageService, Page) ->
       $scope.Page = Page
 
 
@@ -41,4 +36,13 @@ angular.module('app.controllers')
 
       $scope.currentUser = ->
         return localStorageService.get("user")
+
+
+      # signs out the logged in user and sets $scope.currentUser() to null
+      $scope.signOut = -> 
+        $auth.signOut()
+          .then (response) ->
+            $scope.setCurrentUser(null)
+          .catch (response) ->
+            console.log "There was an error logging out"
   ]
