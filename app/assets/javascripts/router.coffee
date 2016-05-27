@@ -5,6 +5,8 @@ angular.module('app')
         .when('/recipes/favorites',
           templateUrl: "recipes/favorite_recipes.html"
           controller: "FavoriteRecipesController"
+          resolve:
+            factory: authenticateUser
         )
         .when('/recipes/:recipeId',
           templateUrl: "recipes/show.html"
@@ -23,3 +25,7 @@ angular.module('app')
           controller: "RecipesIndexController"
         )
   ])
+
+
+authenticateUser = ($rootScope, $location) ->
+  $location.path('/sign-in') unless $rootScope.currentUser()
