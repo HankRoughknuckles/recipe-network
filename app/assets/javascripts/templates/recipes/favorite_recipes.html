@@ -1,1 +1,9 @@
 <h1>Favorite Recipes</h1>
+
+<section class="row" ng-repeat="recipe in favoriteRecipes">
+  <section class="well">
+    <a href 
+    ng-click="showRecipe(recipe)" 
+    class="recipe-{{recipe.id}}">{{recipe.name}}</a>
+  </section>
+</section>

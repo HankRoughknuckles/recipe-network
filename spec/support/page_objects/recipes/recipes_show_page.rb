@@ -9,6 +9,7 @@ class RecipesShowPage
     @page_url = "/#/recipes/#{@recipe.id}"
     @title = "Recipe details"
 
+    @header_content = @recipe.name
     @favorited_mark = ".favorited"
     @unfavorited_mark = ".unfavorited"
   end
@@ -21,6 +22,11 @@ class RecipesShowPage
   def visit_page_as(user)
     user.present? ? login_as(user) : logout
     visit @page_url
+  end
+
+
+  def displayed?
+    has_css? "h1", text: @header_content
   end
 
 
